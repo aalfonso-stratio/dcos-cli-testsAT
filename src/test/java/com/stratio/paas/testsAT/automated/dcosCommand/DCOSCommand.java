@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.stratio.paas.testsAT.automated.dcosConsul;
+package com.stratio.paas.testsAT.automated.dcosCommand;
 
 import org.testng.annotations.Test;
 
@@ -22,14 +22,14 @@ import com.stratio.tests.utils.BaseTest;
 
 import cucumber.api.CucumberOptions;
 
-@CucumberOptions(features = { "src/test/resources/features/automated/dcosConsul/dcosConsul.feature" })
-public class DCOSConsul extends BaseTest {
+@CucumberOptions(features = { "src/test/resources/features/automated/dcosCommand/dcosCommand.feature" })
+public class DCOSCommand extends BaseTest {
 
-    public DCOSConsul() {
+    public DCOSCommand() {
     }
 
     @Test(enabled = true, groups = {"dcos-cli"})
-    public void dcosConsulTest() throws Exception {
+    public void dcosCommandTest() throws Exception {
         new CucumberRunner(this.getClass()).runCukes();
     }
 }

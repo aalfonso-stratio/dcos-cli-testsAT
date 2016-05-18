@@ -35,28 +35,28 @@ Feature: Test addition of consul package to cli
 
   Scenario:  Test dcos consul --version
     Given I open remote ssh connection to host '${DCOS_CLI_HOST}' with user 'root' and password 'stratio'
-    When I execute command 'source /usr/local/bin/env-setup && dcos consul --version' in remote ssh connection
+    When I execute command 'dcos consul --version' in remote ssh connection
     Then the command exit status is '0'
     And the command output contains 'dcos-marathon version 0.1.0'
 
   Scenario: Test dcos consul status leader
     Given I open remote ssh connection to host '${DCOS_CLI_HOST}' with user 'root' and password 'stratio'
-    When I execute command 'source /usr/local/bin/env-setup && dcos consul status leader' in remote ssh connection
+    When I execute command 'dcos consul status leader' in remote ssh connection
     Then the command exit status is '0'
     # And the command output contains ''
 
   Scenario: Test dcos consul status peers
     Given I open remote ssh connection to host '${DCOS_CLI_HOST}' with user 'root' and password 'stratio'
-    When I execute command 'source /usr/local/bin/env-setup && dcos consul status peers' in remote ssh connection
+    When I execute command 'dcos consul status peers' in remote ssh connection
     Then the command exit status is '0'
     # And the command output contains ''
 
   Scenario: Test dcos consul keyvalue set and get
     Given I open remote ssh connection to host '${DCOS_CLI_HOST}' with user 'root' and password 'stratio'
-    When I execute command 'source /usr/local/bin/env-setup && dcos consul keyvalue set name stratians' in remote ssh connection
+    When I execute command 'dcos consul keyvalue set name stratians' in remote ssh connection
     Then the command exit status is '0'
     And the command output contains 'true'
-    When I execute command 'source /usr/local/bin/env-setup && dcos consul keyvalue get name' in remote ssh connection
+    When I execute command 'dcos consul keyvalue get name' in remote ssh connection
     Then the command exit status is '0'
     And the command output contains '"Value": "c3RyYXRpYW5z"'
 
